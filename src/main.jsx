@@ -4,17 +4,24 @@ import LandingPage from "./landingpage";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Projects from "./projects";
+import AboutMe from "./aboutme";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <LandingPage />
-    ),
+    element: <LandingPage />,
   },
   {
     path: "/projects",
     element: <Projects />,
+  },
+  {
+    path: "/about",
+    element: <AboutMe />,
+  },
+  {
+    path: "/capabilities",
+    element: <Capabilities />,
   },
 ]);
 

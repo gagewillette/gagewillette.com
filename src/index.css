@@ -2,17 +2,69 @@
 
 * {
   font-family: 'Raleway', sans-serif;
+  margin: 0
 }
 
 .navbar
 {
   height: 3%;
   width: 100%;
-
+  background-color: gainsboro;
+  padding-top: .5%;
+  padding-bottom: .5%;
 }
-
-
 .loading
 {
   background-color: black;
+}
+.navbar-ul
+{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6%;
+}
+
+.navbar-link
+{
+  text-decoration: none;
+  color: black;
+  font-weight: 300;
+  font-size: 165%;
+}
+
+
+@media only screen and (max-width: 600px)
+{
+ .navbar
+ {
+   height: 3%;
+   width: 100%;
+   background-color: gainsboro;
+   padding-top: .5%;
+   padding-bottom: .5%;
+ }
+ .navbar-ul
+{
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-link-li
+{
+  padding-top: 2.5%;
+}
+
+.navbar-link
+{
+  text-decoration: none;
+  color: black;
+  font-weight: 300;
+  font-size: 165%;
+}
+ 
 }

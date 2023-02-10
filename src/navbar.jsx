@@ -6,10 +6,15 @@ export default function Navbar() {
   
     return (
     <div className="navbar">
-      <h1>Users</h1>
-      <ul>
-        <li>
-          <Link to="/projects">Projects</Link>
+      <ul className="navbar-ul">
+        <li className="navbar-link-li">
+          <Link className="navbar-link" to="/projects">Projects</Link>
+        </li>
+        <li className="navbar-link-li">
+          <Link className="navbar-link" to="/capabilities">Capabilites</Link>
+        </li>
+        <li className="navbar-link-li">
+          <Link className="navbar-link" to="/about">About</Link>
         </li>
       </ul>
     </div>
