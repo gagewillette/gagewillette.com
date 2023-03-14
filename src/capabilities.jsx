@@ -1,6 +1,10 @@
-import React from 'react';
+import React from "react";
+import Navbar from "./navbar";
 
-function Capabilities()
-{
-    
+export default function Capabilities() {
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 }

@@ -1,0 +1,17 @@
+.about-me-picture-wrapper {
+  background-color: rgba(0, 0, 0, 0.685);
+}
+
+.about-me-txt-wrapper {
+  background-color: rgba(0, 0, 0, 0.685);
+  margin: auto;
+  position: relative;
+}
+
+.about-me-picture-holder {
+  width: 80%;
+  margin: auto;
+  padding-top: 3%;
+  position: relative;
+  text-align: center;
+}
