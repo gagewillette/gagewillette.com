@@ -1,0 +1,30 @@
+.projects-footer-divider-holder
+{
+    position: relative;
+}
+.projects-footer-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.projects-footer-divider svg {
+    position: relative;
+    display: block;
+    width: calc(193% + 1.3px);
+    height: 107px;
+    transform: rotateY(180deg);
+}
+
+.projects-footer-divider .shape-fill {
+    fill: #D6D6D6;
+}
+
+.footer {
+    height: 100vh;
+    background: #D6D6D6;
+}

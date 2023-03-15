@@ -1,0 +1,79 @@
+.about-projects-divider-holder
+{
+    position: relative;
+}
+.about-projects-divider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.about-projects-divider svg {
+    position: relative;
+    display: block;
+    width: calc(121% + 1.3px);
+    height: 132px;
+    transform: rotateY(180deg);
+}
+
+.about-projects-divider .shape-fill {
+    fill: #BBBBBB;
+}
+
+
+.projects-holder {
+    
+    height: 100vh;
+    background-color: #525252;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25vh;
+    gap: 10vh;
+}
+
+
+.projects-header
+{
+    color: white;
+    font-size: 3vw;
+}
+
+.gallery
+{
+    display: flex;
+    gap: 3vw;
+
+}
+
+
+
+
+.gallery-tile 
+{
+    transition: .5s;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.gallery-tile:hover
+{
+    transform: scale(1.1);
+}
+
+.gallery-item
+{
+    border-radius: 5%;
+    object-fit: cover;
+}
+
+
+.project-footer
+{
+    color: white;
+    font-weight: 400;
+}

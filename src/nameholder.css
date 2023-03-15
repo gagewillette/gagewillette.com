@@ -1,0 +1,45 @@
+.about-holder {
+  background-color: #bbbbbb;
+}
+
+.name-headers {
+  height: 40vh;
+  padding-top: 35vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  gap: 2vh;
+}
+
+.name-header {
+  font-size: 3.5vw;
+}
+
+.name-subheader {
+  font-size: 1.5vw;
+}
+
+.about-welcome-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.about-welcome-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 117px;
+}
+
+.about-welcome-divider .shape-fill {
+  fill: #bbbbbb;
+}
+.divider {
+  position: relative;
+}
