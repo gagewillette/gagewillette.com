@@ -4,10 +4,11 @@ import "./landingpage.css";
 import "./nameholder.css";
 import "./projectholder.css";
 import "./projectsfooter.css";
+import "./footerbackground.css";
 import { useNavigate, Link } from "react-router-dom";
 
 export default function LandingPage() {
-  return (
+  return (    
     <>
       {/* <Navbar className="navbar" /> */}
       <div className="welcome-holder">
@@ -69,7 +70,7 @@ export default function LandingPage() {
           <div className="printer-svg gallery-tile">
             <Link to="/pass-printer">
               <img
-                src="src\assets\epson-t20.svg"
+                src="https://gdurl.com/txRK"
                 alt="epsonprinter"
                 width={400}
                 className="gallery-item"
@@ -79,7 +80,7 @@ export default function LandingPage() {
           <div className="dock-svg gallery-tile">
             <Link to="/dock">
               <img
-                src="src\assets\forklift-boat.svg"
+                src="https://gdurl.com/DRlLm/"
                 alt="dockicon"
                 width={400}
                 className="gallery-item"
@@ -115,7 +116,30 @@ export default function LandingPage() {
         </div>
       </div>
 
-      <div className="footer"></div>
+      <div className="footer">
+        <div className="footer-content">
+          <div className="info-card">
+            <div className="info-card-picture">
+
+            </div>
+          </div>
+        </div>
+
+        <div className="footer-background">
+          <ul className="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
     </>
   );
 }

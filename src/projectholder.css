@@ -39,18 +39,14 @@
 .projects-header
 {
     color: white;
-    font-size: 3vw;
+    font-size: 1.25 rem;
 }
 
 .gallery
 {
     display: flex;
     gap: 3vw;
-
 }
-
-
-
 
 .gallery-tile 
 {
@@ -60,15 +56,37 @@
     margin: 0 auto;
 }
 
-.gallery-tile:hover
-{
-    transform: scale(1.1);
-}
-
 .gallery-item
 {
     border-radius: 5%;
     object-fit: cover;
+}
+
+
+@media (max-width: 900px) {
+    .projects-header
+    {
+        padding-bottom: 4vh;
+    }
+    
+    .gallery {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0;
+    }
+
+
+    .projects-holder
+    {
+        gap: 0;
+    }
+}
+
+
+
+.gallery-tile:hover
+{
+    transform: scale(1.1);
 }
 
 

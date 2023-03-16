@@ -4,27 +4,45 @@
 }
 .projects-footer-divider {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
     overflow: hidden;
     line-height: 0;
-    transform: rotate(180deg);
 }
 
 .projects-footer-divider svg {
     position: relative;
     display: block;
-    width: calc(193% + 1.3px);
-    height: 107px;
-    transform: rotateY(180deg);
+    width: calc(127% + 1.3px);
+    height: 90px;
 }
 
 .projects-footer-divider .shape-fill {
-    fill: #D6D6D6;
+    fill: #525252;
 }
 
 .footer {
-    height: 100vh;
-    background: #D6D6D6;
+    position: relative;
+}
+
+.footer-content
+{
+    position: absolute;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+}
+
+.footer-content h1 {
+    font-size: 5rem;
+}
+
+.info-card-picture
+{
+
+    border: 5px solid;
 }
