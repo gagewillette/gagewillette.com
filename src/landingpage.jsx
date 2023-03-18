@@ -8,7 +8,7 @@ import "./footerbackground.css";
 import { useNavigate, Link } from "react-router-dom";
 
 export default function LandingPage() {
-  return (    
+  return (
     <>
       {/* <Navbar className="navbar" /> */}
       <div className="welcome-holder">
@@ -118,10 +118,8 @@ export default function LandingPage() {
 
       <div className="footer">
         <div className="footer-content">
-          <div className="info-card">
-            <div className="info-card-picture">
-
-            </div>
+          <div className="lets-talk">
+            <h1>LET'S TALK</h1>
           </div>
         </div>
 
