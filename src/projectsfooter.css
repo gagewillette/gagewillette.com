@@ -1,48 +1,68 @@
-.projects-footer-divider-holder
-{
-    position: relative;
+:root {
+  --footer-top: 50vh;
+}
+
+.projects-footer-divider-holder {
+  position: relative;
 }
 .projects-footer-divider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
 }
 
 .projects-footer-divider svg {
-    position: relative;
-    display: block;
-    width: calc(127% + 1.3px);
-    height: 90px;
+  position: relative;
+  display: block;
+  width: calc(127% + 1.3px);
+  height: 90px;
 }
 
 .projects-footer-divider .shape-fill {
-    fill: #525252;
+  fill: #525252;
 }
 
 .footer {
-    position: relative;
+  position: relative;
 }
 
-.footer-content
-{
-    position: absolute;
+.footer-content {
+  position: absolute;
+  top: var(--footer-top);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10vw;
+}
 
-    width: 100%;
+.lets-talk
+{
+    font-size: 3rem;
+    padding-top: 4rem;
+}
+
+.lets-talk h1 {
+    font-weight: 300;
+}
+
+
+.info-card
+{
     display: flex;
-    justify-content: center;
-    flex-direction: row;
-
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
 }
 
-.footer-content h1 {
-    font-size: 5rem;
+.info-card h1 {
+    font-weight: 400;
+    font-size: 3rem;
 }
 
-.info-card-picture
-{
-
-    border: 5px solid;
+.info-card h2 {
+    font-weight: 300;
+    font-size: 2rem;
 }

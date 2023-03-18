@@ -119,7 +119,14 @@ export default function LandingPage() {
       <div className="footer">
         <div className="footer-content">
           <div className="lets-talk">
-            <h1>LET'S TALK</h1>
+            <h1>LET'S TALK -&gt;</h1>
+          </div>
+
+          <div className="info-card">
+            <h1>Gage Willette</h1>
+            <h2>gage@gagewillette.com</h2>
+            <h2>gagew0513@gmail.com</h2>
+            <h2>734-558-3562</h2>
           </div>
         </div>
 
