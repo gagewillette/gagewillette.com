@@ -3,9 +3,7 @@ import ReactDOM from "react-dom/client";
 import LandingPage from "./landingpage";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Projects from "./projects";
-import AboutMe from "./aboutme";
-import Capabilities from "./capabilities";
+import Dock from './dock.jsx';
 
 const router = createBrowserRouter([
   {
@@ -13,17 +11,9 @@ const router = createBrowserRouter([
     element: <LandingPage />,
   },
   {
-    path: "/projects",
-    element: <Projects />,
-  },
-  {
-    path: "/about",
-    element: <AboutMe />,
-  },
-  {
-    path: "/capabilities",
-    element: <Capabilities />,
-  },
+    path: "/dock",
+    element: <Dock />,
+  },  
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

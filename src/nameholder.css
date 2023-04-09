@@ -20,6 +20,11 @@
   font-size: 1.5rem;
 }
 
+.about-welcome-divider-holder
+{
+    position: relative;
+}
+
 .about-welcome-divider {
   position: absolute;
   bottom: 0;
