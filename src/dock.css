@@ -1,0 +1,94 @@
+/* ROOT */
+:root {
+  background-color: gainsboro;
+}
+
+.dock-root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  gap: 15vh;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* CONTAINERS */
+.header-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.text-containers-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 7vw 0 7vw;
+  gap: 2vw;
+}
+
+.overview-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1;
+}
+
+.why-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+/* TEXT STYLES */
+.dock-header-text {
+  font-size: 3rem;
+}
+
+.overview-text {
+  font-size: 2.5rem;
+}
+
+.overview-body-text {
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 1.7rem;
+}
+
+.why-header-text {
+  font-size: 2.5rem;
+}
+
+.why-body-text {
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 1.7rem;
+}
+
+/* MEDIA QUERY (RESPONSIVE) */
+@media (max-width: 900px) {
+  .overview-body-text {
+    line-height: 1.6rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  .why-body-text {
+    line-height: 1.6rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+  .overview-text {
+    font-size: 2rem;
+  }
+
+  .why-header-text {
+    font-size: 2rem;
+  }
+}

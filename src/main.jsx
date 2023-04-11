@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import LandingPage from "./landingpage";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Dock from './dock.jsx';
+import Dock from "./dock.jsx";
+import PassPrinter from "./printer";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +14,11 @@ const router = createBrowserRouter([
   {
     path: "/dock",
     element: <Dock />,
-  },  
+  },
+  {
+    path: "/pass-printer",
+    element: <PassPrinter />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

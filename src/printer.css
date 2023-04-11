@@ -1,0 +1,75 @@
+/* ROOT */
+:root {
+  background-color: gainsboro;
+}
+
+.printer-root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 15vh;
+}
+
+/* CONTAINERS */
+.header-container {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.overview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.why-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* TEXT STYLES */
+.printer-header-text {
+  font-size: 3rem;
+}
+
+.overview-text {
+  font-size: 2.5rem;
+}
+
+.overview-body-text {
+  font-size: 1.5rem;
+  line-height: 1.7rem;
+}
+
+.why-header-text {
+  font-size: 2.5rem;
+}
+
+/* MEDIA QUERY (RESPONSIVE) */
+@media (max-width: 900px) {
+  .overview-body-text {
+    line-height: 1.6rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  .why-body-text {
+    line-height: 1.6rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+
+  .overview-text {
+    font-size: 2rem;
+  }
+
+  .why-header-text {
+    font-size: 2rem;
+  }
+}
