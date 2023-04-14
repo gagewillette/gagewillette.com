@@ -9,14 +9,16 @@
   height: 100vh;
   width: 100%;
   display: flex;
+  gap: 10vh;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  gap: 15vh;
 }
 
 /* CONTAINERS */
 .header-container {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   padding-top: 3rem;
 }
@@ -51,8 +53,21 @@
   font-size: 2.5rem;
 }
 
+.return-home-text
+{
+  font-size: 1.25rem;
+}
+
+.return-home-link
+{
+  text-decoration: none;
+}
+
 /* MEDIA QUERY (RESPONSIVE) */
 @media (max-width: 900px) {
+  .printer-header-text {
+    font-size: 2.5rem;
+  }
   .overview-body-text {
     line-height: 1.6rem;
     font-weight: 500;
@@ -64,12 +79,20 @@
     font-weight: 500;
     font-size: 1.2rem;
   }
-
   .overview-text {
     font-size: 2rem;
   }
 
   .why-header-text {
     font-size: 2rem;
+  }
+
+  .text-containers-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 7vw 0 7vw;
+    gap: 8vw;
   }
 }

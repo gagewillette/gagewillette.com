@@ -10,7 +10,7 @@ root
 :root {
   --typewriterSpeed: 3s;
   --typewriterCharacters: 16;
-  --bg-color: white;
+  --bg-color: gainsboro;
 }
 
 .welcome-holder {

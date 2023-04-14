@@ -1,5 +1,6 @@
 import React from "react";
 import "./dock.css";
+import { Link } from "react-router-dom";
 
 export default function Dock() {
   return (
@@ -15,13 +16,12 @@ export default function Dock() {
             <p className="overview-body-text">
               Dock is a mobile app developed to revolutionze the boat marina
               process. My app is designed to be highly user-friendly and elegant
-              to conform to the broad age range of boat owners. Using the app,
-              any customer can schedule many services at their home marina. Want
-              your boat in the water at 4:30? No problem. Ask them to load your
-              boat with ice while you're at it! Users have the ability to
-              schedule boat drops, cleaning rack time, refueling, trailering,
-              etc. My app is designed to be highly user-friendly and elegant to
-              conform to the broad age range of boat owners.
+              to conform to the broad age range of boat owners across the world.
+              Using my app, any customer can schedule services at their home
+              marina. Want your boat in the water at 2:30? No problem. Request
+              staff to load your boat with ice while you're at it! Users have
+              the ability to schedule boat drops, cleaning rack time, refueling,
+              trailering, etc.
             </p>
           </div>
 
@@ -32,9 +32,15 @@ export default function Dock() {
               experience is pleasurable besides the procedure of scheduling your
               boat to be put in the water at the marina. The entire process is
               slow, outdated, and requires marina staff personel to be alert at
-              all times to take your call.
+              all times to take your call. I built Dock solely with the boater
+              and boating experience in mind.
             </p>
           </div>
+        </div>
+        <div className="return-home-button">
+          <Link className="return-home-link" to={"/"}>
+            <h1 className="return-home-text">Reuturn home.</h1>
+          </Link>
         </div>
       </div>
     </>

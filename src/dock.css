@@ -9,7 +9,7 @@
   height: 100vh;
   width: 100%;
   display: flex;
-  gap: 15vh;
+  gap: 10vh;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
@@ -71,8 +71,23 @@
   line-height: 1.7rem;
 }
 
+.return-home-text
+{
+  font-size: 1.25rem;
+}
+
+.return-home-link
+{
+  text-decoration: none;
+}
+
+
 /* MEDIA QUERY (RESPONSIVE) */
 @media (max-width: 900px) {
+  .dock-header-text {
+    font-size: 2.5rem;
+  }
+  
   .overview-body-text {
     line-height: 1.6rem;
     font-weight: 500;
@@ -90,5 +105,14 @@
 
   .why-header-text {
     font-size: 2rem;
+  }
+
+  .text-containers-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 7vw 0 7vw;
+    gap: 8vw;
   }
 }
