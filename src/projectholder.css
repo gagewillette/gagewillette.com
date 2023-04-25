@@ -1,8 +1,8 @@
-.about-projects-divider-holder
+.about-skills-divider-holder
 {
     position: relative;
 }
-.about-projects-divider {
+.about-skills-divider {
     position: absolute;
     top: 0;
     left: 0;
@@ -11,7 +11,7 @@
     line-height: 0;
 }
 
-.about-projects-divider svg {
+.about-skills-divider svg {
     position: relative;
     display: block;
     width: calc(121% + 1.3px);
@@ -19,7 +19,7 @@
     transform: rotateY(180deg);
 }
 
-.about-projects-divider .shape-fill {
+.about-skills-divider .shape-fill {
     fill: #BBBBBB;
 }
 

@@ -1,13 +1,30 @@
 import React from "react";
+import { SkillTile } from "./skill-tile";
 import "./landingpage.css";
 import "./nameholder.css";
 import "./projectholder.css";
 import "./projectsfooter.css";
 import "./footerbackground.css";
+import "./capabilites.css";
 import { useNavigate, Link } from "react-router-dom";
-
+/*
+import { initializeApp } from "firebase/app";
+import { getAnalytics, logEvent } from "firebase/analytics";
+*/
 export default function LandingPage() {
-    
+  /*const firebaseConfig = {
+    apiKey: "AIzaSyCwVTkU7gYnB2W99cII89qUjHkjVguPM4M",
+    authDomain: "dock-461b9.firebaseapp.com",
+    projectId: "dock-461b9",
+    storageBucket: "dock-461b9.appspot.com",
+    messagingSenderId: "602981683316",
+    appId: "1:602981683316:web:93090bed5fe74d610d8121",
+    measurementId: "G-6NDH22VHCH"
+  };
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  logEvent(analytics, 'page_view', {})  
+*/
   return (
     <>
       <div className="welcome-holder">
@@ -47,8 +64,8 @@ export default function LandingPage() {
         </div>
       </div>
 
-      <div className="about-projects-divider-holder">
-        <div className="about-projects-divider">
+      <div className="about-skills-divider-holder">
+        <div className="about-skills-divider">
           <svg
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
@@ -57,6 +74,40 @@ export default function LandingPage() {
           >
             <path
               d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+      </div>
+
+      <div className="skills-holder">
+        <div className="skills-header-text-holder">
+          <h1 className="skills-header-text">Capabilites</h1>
+        </div>
+
+        <div className="skills-tiles-holder">
+          <div className="skill-tile">
+            <SkillTile link={"https://i.imgur.com/PZQAryI.png"} size={200} />
+          </div>
+          <div className="skill-tile">
+            <SkillTile link={"https://i.imgur.com/OTjuOme.png"} size={200} />
+          </div>
+          <div className="skill-tile">
+            <SkillTile link={"https://i.imgur.com/OTjuOme.png"} size={200} />
+          </div>
+        </div>
+      </div>
+
+      <div className="skills-projects-divider-holder">
+        <div class="skills-projects-divider">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z"
               class="shape-fill"
             ></path>
           </svg>
@@ -118,9 +169,8 @@ export default function LandingPage() {
 
           <div className="info-card">
             <h1>Gage Willette</h1>
-            <h2>gage@gagewillette.com</h2>
             <h2>gagew0513@gmail.com</h2>
-            <h2>734-558-3562</h2>
+            <h2>941-275-9989</h2>
           </div>
         </div>
 

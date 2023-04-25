@@ -2,6 +2,7 @@ import React from "react";
 import "./dock.css";
 import { Link } from "react-router-dom";
 
+
 export default function Dock() {
   return (
     <>
@@ -39,7 +40,7 @@ export default function Dock() {
         </div>
         <div className="return-home-button">
           <Link className="return-home-link" to={"/"}>
-            <h1 className="return-home-text">Reuturn home.</h1>
+            <h1 className="return-home-text">Return home.</h1>
           </Link>
         </div>
       </div>

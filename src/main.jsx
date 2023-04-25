@@ -18,7 +18,7 @@ const router = createBrowserRouter([
   {
     path: "/pass-printer",
     element: <PassPrinter />,
-  },
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
