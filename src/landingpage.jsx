@@ -7,24 +7,31 @@ import "./projectsfooter.css";
 import "./footerbackground.css";
 import "./capabilites.css";
 import { useNavigate, Link } from "react-router-dom";
-/*
 import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
-*/
+
+function getWindowSize() {
+  if (window.innerWidth > 900) {
+    return 200;
+  } else {
+    return 100;
+  }
+}
+
 export default function LandingPage() {
-  /*const firebaseConfig = {
+  const firebaseConfig = {
     apiKey: "AIzaSyCwVTkU7gYnB2W99cII89qUjHkjVguPM4M",
     authDomain: "dock-461b9.firebaseapp.com",
     projectId: "dock-461b9",
     storageBucket: "dock-461b9.appspot.com",
     messagingSenderId: "602981683316",
     appId: "1:602981683316:web:93090bed5fe74d610d8121",
-    measurementId: "G-6NDH22VHCH"
+    measurementId: "G-6NDH22VHCH",
   };
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
-  logEvent(analytics, 'page_view', {})  
-*/
+  logEvent(analytics, "page_view", {});
+
   return (
     <>
       <div className="welcome-holder">
@@ -60,7 +67,7 @@ export default function LandingPage() {
       <div className="about-holder">
         <div className="name-headers">
           <h1 className="name-header">I am Gage</h1>
-          <h2 className="name-subheader">A 17 year old developer</h2>
+          <h2 className="name-subheader">An 18 year old developer</h2>
         </div>
       </div>
 
@@ -87,13 +94,22 @@ export default function LandingPage() {
 
         <div className="skills-tiles-holder">
           <div className="skill-tile">
-            <SkillTile link={"https://i.imgur.com/PZQAryI.png"} size={200} />
+            <SkillTile
+              link={"https://i.imgur.com/PZQAryI.png"}
+              size={getWindowSize()}
+            />
           </div>
           <div className="skill-tile">
-            <SkillTile link={"https://i.imgur.com/OTjuOme.png"} size={200} />
+            <SkillTile
+              link={"https://i.imgur.com/OTjuOme.png"}
+              size={getWindowSize()}
+            />
           </div>
           <div className="skill-tile">
-            <SkillTile link={"https://i.imgur.com/OTjuOme.png"} size={200} />
+            <SkillTile
+              link={"https://i.imgur.com/hl3iSpu.png"}
+              size={getWindowSize()}
+            />
           </div>
         </div>
       </div>
@@ -120,11 +136,7 @@ export default function LandingPage() {
         <div className="gallery">
           <div className="printer-svg gallery-tile">
             <Link to="/pass-printer">
-              <img
-                src="https://gdurl.com/txRK"
-                alt="epsonprinter"
-                className="gallery-item"
-              />
+              <img src="https://gdurl.com/SNZU/" className="gallery-item" />
             </Link>
           </div>
           <div className="dock-svg gallery-tile">
@@ -169,7 +181,7 @@ export default function LandingPage() {
 
           <div className="info-card">
             <h1>Gage Willette</h1>
-            <h2>gagew0513@gmail.com</h2>
+            <h2>gage@gagewillette.com</h2>
             <h2>941-275-9989</h2>
           </div>
         </div>

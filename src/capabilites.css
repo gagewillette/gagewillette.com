@@ -15,11 +15,19 @@
   gap: 3vw;
 }
 
-.skill-tile
-{
-  
+.skill-tile {
+  transition: 0.4s;
 }
 
+.skill-tile:hover {
+  transform: scale(1.1);
+}
+@media (max-width: 900px) {
+  .skills-tiles-holder {
+    flex-direction: column;
+  }
+  
+}
 
 /* TEXT STYLES */
 .skills-header-text {
