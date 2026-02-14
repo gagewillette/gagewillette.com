@@ -1,32 +1,118 @@
-"use client"
+"use client";
 
-/*
-look into rpelace this comp with this
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useMemo, useState } from "react";
 
-https://ui.shadcn.com/docs/components/radix/navigation-menu
-*/
+type Item = { label: string; href: string; id: string };
 
 export default function Navbar() {
-  const items = [
-    { label: "HOME", href: "#home" },
-    { label: "ABOUT", href: "#about" },
-    { label: "WORK", href: "#work" },
-    { label: "CONTACT", href: "#contact" },
-  ]
+  const items: Item[] = useMemo(
+    () => [
+      { label: "HOME", href: "#home", id: "home" },
+      { label: "ABOUT", href: "#about", id: "about" },
+      { label: "WORK", href: "#work", id: "work" },
+      { label: "CONTACT", href: "#contact", id: "contact" },
+    ],
+    [],
+  );
+
+  const [hovered, setHovered] = useState<string | null>(null);
+  const [active, setActive] = useState<string>("home");
+
+  useEffect(() => {
+    const ids = items.map((i) => i.id);
+    const obs = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort(
+            (a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0),
+          )[0];
+        if (visible?.target?.id) setActive(visible.target.id);
+      },
+      { root: null, threshold: [0.2, 0.35, 0.5, 0.65] },
+    );
+
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) obs.observe(el);
+    });
+
+    return () => obs.disconnect();
+  }, [items]);
+
+  const current = hovered ?? active;
 
   return (
     <div className="fixed top-6 left-1/2 z-50 -translate-x-1/2">
-      <nav className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_0_40px_rgba(168,85,247,0.20)]">
-        <ul className="flex items-center gap-10 px-10 py-3 text-xs tracking-[0.3em] text-white/80">
+      <nav
+        className="
+          relative
+          rounded-2xl border border-white/10
+          bg-white/5 backdrop-blur-xl
+          shadow-[0_0_40px_rgba(59,130,246,0.18)]
+        "
+        onMouseLeave={() => setHovered(null)}
+      >
+        <ul className="relative flex items-center gap-2 px-2 py-2">
           {items.map((it) => (
-            <li key={it.href}>
-              <a className="hover:text-white transition" href={it.href}>
-                {it.label}
+            <li key={it.id} className="relative">
+              <a
+                href={it.href}
+                onMouseEnter={() => setHovered(it.id)}
+                className="
+                  relative block select-none
+                  px-5 py-2.5
+                  text-xs tracking-[0.32em]
+                  rounded-xl
+                "
+              >
+                {/* Base text (always visible) */}
+                <span className="relative z-10 text-white/70 transition-colors">
+                  {it.label}
+                </span>
+
+                {/* Mask text (only visible when pill is under this item) */}
+                <AnimatePresence>
+                  {current === it.id ? (
+                    <motion.span
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="
+                        pointer-events-none
+                        absolute inset-0 z-20
+                        grid place-items-center
+                        text-xs tracking-[0.32em]
+                        text-white
+                        mix-blend-screen
+                      "
+                    >
+                      {it.label}
+                    </motion.span>
+                  ) : null}
+                </AnimatePresence>
               </a>
+
+              {/* Sliding pill */}
+              {current === it.id ? (
+                <motion.div
+                  layoutId="nav-pill"
+                  className="
+                    absolute inset-0 rounded-xl
+                    bg-purple-400/60
+                    shadow-[0_0_30px_rgba(59,130,246,0.45)]
+                    before:absolute before:inset-0 before:rounded-xl
+                    before:bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.35),transparent_55%)]
+                    before:opacity-70
+                  "
+                  transition={{ type: "spring", stiffness: 500, damping: 35 }}
+                />
+              ) : null}
             </li>
           ))}
         </ul>
       </nav>
     </div>
-  )
+  );
 }

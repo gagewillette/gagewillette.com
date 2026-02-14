@@ -34,34 +34,34 @@ export default function Hero() {
         >
           <h1
             className="
-              font-semibold tracking-tight text-white
-              text-3xl sm:text-4xl lg:text-5xl xl:text-6xl
-            "
+    font-semibold tracking-tight text-white
+    text-4xl sm:text-5xl lg:text-6xl xl:text-7xl
+  "
           >
             Hi, I’m Gage
           </h1>
 
           <p
             className="
-            mt-3
-            font-medium sm:font-semibold
-            text-lg sm:text-xl lg:text-2xl
-            bg-gradient-to-r from-purple-400 via-indigo-400 to-cyan-400
-            bg-clip-text text-transparent
-            drop-shadow-[0_0_12px_rgba(168,85,247,0.35)]
-        "
+    mt-4
+    font-semibold
+    text-xl sm:text-2xl lg:text-3xl
+    bg-gradient-to-r from-purple-400 via-indigo-400 to-cyan-400
+    bg-clip-text text-transparent
+    drop-shadow-[0_0_16px_rgba(168,85,247,0.4)]
+  "
           >
             20 Year Old Software Developer.
           </p>
 
           <p
             className="
-              mt-5 sm:mt-6
-              mx-auto md:mx-0
-              max-w-md
-              text-white/60 leading-6
-              text-sm sm:text-base
-            "
+    mt-6
+    mx-auto md:mx-0
+    max-w-lg
+    text-white/70 leading-relaxed
+    text-base sm:text-lg lg:text-xl
+  "
           >
             Computer Science student at FSU building SaaS tools, AI-powered
             workflows, and scalable full-stack applications.
