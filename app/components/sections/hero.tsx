@@ -81,7 +81,20 @@ export default function Hero() {
               variant="secondary"
               className="rounded-full bg-white/10 text-white hover:bg-white/15 w-full sm:w-auto"
             >
-              View Work
+              <a
+                href="#work"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.querySelector("#work");
+                  if (!el) return;
+                  el.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }}
+              >
+                View Work
+              </a>
             </Button>
           </div>
         </motion.div>
