@@ -54,7 +54,7 @@ export default function Navbar() {
         "
         onMouseLeave={() => setHovered(null)}
       >
-        <ul className="relative flex items-center gap-2 px-2 py-2">
+        <ul className="relative flex items-center gap-1 px-1.5 py-1.5 sm:gap-2 sm:px-2 sm:py-2">
           {items.map((it) => (
             <li key={it.id} className="relative">
               <a
@@ -71,8 +71,9 @@ export default function Navbar() {
                 }}
                 className="
                   relative block select-none
-                  px-5 py-2.5
-                  text-xs tracking-[0.32em]
+                  px-3 py-2 sm:px-5 sm:py-2.5
+                  text-[10px] sm:text-xs
+                  tracking-[0.22em] sm:tracking-[0.32em]
                   rounded-xl
                 "
               >
@@ -92,7 +93,7 @@ export default function Navbar() {
                         pointer-events-none
                         absolute inset-0 z-20
                         grid place-items-center
-                        text-xs tracking-[0.32em]
+                        text-[10px] tracking-[0.22em] sm:text-xs sm:tracking-[0.32em]
                         text-white
                         mix-blend-screen
                       "
