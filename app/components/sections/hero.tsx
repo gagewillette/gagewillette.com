@@ -12,7 +12,7 @@ export default function Hero() {
       className="
         mx-auto max-w-6xl
         px-4 sm:px-6 lg:px-8
-        pt-20 sm:pt-24 md:pt-28 lg:pt-32
+        pt-24 sm:pt-24 md:pt-28 lg:pt-32
         pb-16 sm:pb-20 md:pb-24
         scroll-mt-32
       "
@@ -30,7 +30,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="
             order-2 md:order-1
-            text-center md:text-left
+            text-center sm:text-left
           "
         >
           <h1
@@ -58,7 +58,7 @@ export default function Hero() {
           <p
             className="
     mt-6
-    mx-auto md:mx-0
+    mx-auto sm:mx-0
     max-w-lg
     text-white/70 leading-relaxed
     text-base sm:text-lg lg:text-xl
@@ -73,7 +73,7 @@ export default function Hero() {
               mt-7 sm:mt-8
               flex flex-col sm:flex-row
               gap-3
-              justify-center md:justify-start
+              justify-center sm:justify-start
             "
           >
             <Button className="rounded-full w-full sm:w-auto">Contact</Button>

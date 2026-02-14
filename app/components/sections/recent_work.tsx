@@ -20,7 +20,7 @@ const projects: Project[] = [
     subtitle: "AI Gmail assistant",
     description:
       "Triages inboxes, summarizes threads, and drafts replies using Gmail OAuth, vector search, and LLMs.",
-    image: "/work/code.webp",
+    image: "/inboxghost.jpg",
     links: [
       { type: "github", href: "https://github.com/gagewillette/InboxGhost" },
     ],
@@ -112,6 +112,7 @@ function ProjectRow({ p, flip }: { p: Project; flip?: boolean }) {
             bg-[linear-gradient(135deg,rgba(255,255,255,0.10),rgba(255,255,255,0.04))]
             backdrop-blur-xl
             p-7 sm:p-8
+            text-center sm:text-left
             shadow-[0_24px_90px_rgba(0,0,0,0.55)]
             "
           >
@@ -133,7 +134,7 @@ function ProjectRow({ p, flip }: { p: Project; flip?: boolean }) {
               {p.description}
             </p>
 
-            <div className="mt-6 flex items-center gap-4">
+            <div className="mt-6 flex items-center justify-center gap-4 sm:justify-start">
               {p.links.map((l) => (
                 <a
                   key={l.type}
