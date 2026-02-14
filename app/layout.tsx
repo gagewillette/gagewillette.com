@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Gage Willette",
   description: "A developer portfolio built in Next.JS",
+  icons: {
+    icon: "/icon.webp"
+  }
 };
 
 export default function RootLayout({
