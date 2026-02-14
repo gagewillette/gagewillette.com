@@ -52,7 +52,7 @@ export default function Hero() {
     drop-shadow-[0_0_16px_rgba(168,85,247,0.4)]
   "
           >
-            20 Year Old Software Developer.
+            <DyanmicAge/> Year Old Software Developer.
           </p>
 
           <p
