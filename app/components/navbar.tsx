@@ -60,6 +60,15 @@ export default function Navbar() {
               <a
                 href={it.href}
                 onMouseEnter={() => setHovered(it.id)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.querySelector(it.href);
+                  if (!el) return;
+                  el.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }}
                 className="
                   relative block select-none
                   px-5 py-2.5

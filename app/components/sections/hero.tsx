@@ -14,6 +14,7 @@ export default function Hero() {
         px-4 sm:px-6 lg:px-8
         pt-20 sm:pt-24 md:pt-28 lg:pt-32
         pb-16 sm:pb-20 md:pb-24
+        scroll-mt-32
       "
     >
       <div
