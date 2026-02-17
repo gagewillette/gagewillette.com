@@ -118,7 +118,7 @@ export default function Hero() {
             "
           >
             <Image
-              src="/headshot_cleanup.webp"
+              src="/headshot_cleanup_min.webp"
               alt="Gage Willette"
               fill
               className="object-cover"
