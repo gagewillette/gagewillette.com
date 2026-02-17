@@ -19,27 +19,54 @@ export default function Navbar() {
   const [hovered, setHovered] = useState<string | null>(null);
   const [active, setActive] = useState<string>("home");
 
-  useEffect(() => {
-    const ids = items.map((i) => i.id);
-    const obs = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort(
-            (a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0),
-          )[0];
-        if (visible?.target?.id) setActive(visible.target.id);
-      },
-      { root: null, threshold: [0.2, 0.35, 0.5, 0.65] },
-    );
+useEffect(() => {
+  const sections = items
+    .map((i) => document.getElementById(i.id))
+    .filter(Boolean) as HTMLElement[];
 
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) obs.observe(el);
-    });
+  if (sections.length === 0) return;
 
-    return () => obs.disconnect();
-  }, [items]);
+  let raf = 0;
+
+  const computeActive = () => {
+    if (hovered) return;
+
+    const centerY = window.innerHeight / 2;
+
+    let bestId = active;
+    let bestDist = Number.POSITIVE_INFINITY;
+
+    for (const s of sections) {
+      const r = s.getBoundingClientRect();
+      const sectionCenter = r.top + r.height / 2;
+      const dist = Math.abs(sectionCenter - centerY);
+
+      if (dist < bestDist) {
+        bestDist = dist;
+        bestId = s.id;
+      }
+    }
+
+    if (bestId && bestId !== active) setActive(bestId);
+  };
+
+  const onScroll = () => {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(computeActive);
+  };
+
+  // Run once immediately so initial state is correct
+  computeActive();
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+
+  return () => {
+    cancelAnimationFrame(raf);
+    window.removeEventListener("scroll", onScroll);
+    window.removeEventListener("resize", onScroll);
+  };
+}, [items, hovered, active]);
 
   const current = hovered ?? active;
 
@@ -63,6 +90,7 @@ export default function Navbar() {
                 onClick={(e) => {
                   e.preventDefault();
                   const el = document.querySelector(it.href);
+                  setActive(it.id)
                   if (!el) return;
                   el.scrollIntoView({
                     behavior: "smooth",
