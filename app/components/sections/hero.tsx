@@ -122,6 +122,7 @@ export default function Hero() {
               alt="Gage Willette"
               fill
               className="object-cover"
+              sizes="(max-width: 768px) 320px, (max-width: 1024px) 360px, (max-width: 1280px) 420px, 480px"
               priority
             />
           </div>
