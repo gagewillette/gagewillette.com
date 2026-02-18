@@ -1,18 +1,80 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import BloomBackground from "../widgets/bloom_background";
-import { Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
+import {
+  AlertCircle,
+  CheckCircle2,
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
+} from "lucide-react";
 import { FiSend } from "react-icons/fi";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
+  const form = useRef<HTMLFormElement | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">(
+    "idle",
+  );
+  const [errorMessage, setErrorMessage] = useState("");
 
-    const handleContactSubmit = () => {
-        console.log("Sending message")
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!form.current || isSubmitting) return;
+
+    const formData = new FormData(form.current);
+    const name = String(formData.get("user_name") ?? "").trim();
+    const email = String(formData.get("user_email") ?? "").trim();
+    const subject = String(formData.get("subject") ?? "").trim();
+    const message = String(formData.get("message") ?? "").trim();
+    const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!name || !email || !subject || !message || !emailIsValid) {
+      setSubmitStatus("error");
+      setErrorMessage(
+        "Please provide your name, a valid email, a subject, and a message.",
+      );
+      return;
     }
+
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+    setErrorMessage("");
+
+    try {
+      await emailjs.sendForm("service_ur9gz3q", "template_dg2gxr5", form.current, {
+        publicKey: "2z9QyD2NyXEtixhEx",
+      });
+      form.current.reset();
+      setSubmitStatus("success");
+    } catch (error) {
+      const fallbackError =
+        "Your message could not be sent. Please try again in a moment.";
+      const details =
+        typeof error === "object" &&
+        error !== null &&
+        "text" in error &&
+        typeof error.text === "string"
+          ? error.text
+          : fallbackError;
+
+      setSubmitStatus("error");
+      setErrorMessage(details);
+      console.log("FAILED...", details);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact" className="relative py-24 scroll-mt-32">
@@ -183,7 +245,11 @@ export default function Contact() {
                 Let’s talk
               </h3>
 
-              <form className="mt-8 space-y-5">
+              <form
+                ref={form}
+                onSubmit={handleContactSubmit}
+                className="mt-8 space-y-5"
+              >
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div className="space-y-2">
                     <label className="text-xs tracking-widest text-white/60">
@@ -191,6 +257,8 @@ export default function Contact() {
                     </label>
                     <Input
                       placeholder="Your name"
+                      name="user_name"
+                      required
                       className="
                         border-white/12 bg-white/5 text-white placeholder:text-white/35
                         focus-visible:ring-2 focus-visible:ring-cyan-400/40
@@ -204,7 +272,9 @@ export default function Contact() {
                     </label>
                     <Input
                       type="email"
+                      name="user_email"
                       placeholder="you@example.com"
+                      required
                       className="
                         border-white/12 bg-white/5 text-white placeholder:text-white/35
                         focus-visible:ring-2 focus-visible:ring-cyan-400/40
@@ -219,6 +289,8 @@ export default function Contact() {
                   </label>
                   <Input
                     placeholder="What’s this about?"
+                    name="subject"
+                    required
                     className="
                       border-white/12 bg-white/5 text-white placeholder:text-white/35
                       focus-visible:ring-2 focus-visible:ring-cyan-400/40
@@ -232,6 +304,8 @@ export default function Contact() {
                   </label>
                   <Textarea
                     placeholder="Write your message..."
+                    name="message"
+                    required
                     className="
                       min-h-[160px]
                       border-white/12 bg-white/5 text-white placeholder:text-white/35
@@ -242,8 +316,8 @@ export default function Contact() {
 
                 <div className="pt-2 flex items-center gap-3">
                   <Button
-                    type="button"
-                    onClick={handleContactSubmit}
+                    type="submit"
+                    disabled={isSubmitting}
                     className="
                       rounded-full
                       bg-cyan-500/80 hover:bg-cyan-500
@@ -252,13 +326,36 @@ export default function Contact() {
                     "
                   >
                     <FiSend />
-                    Send message
+                    {isSubmitting ? "Sending..." : "Send message"}
                   </Button>
 
                   <span className="text-xs text-white/45">
                     No spam. No newsletters. Just a reply.
                   </span>
                 </div>
+
+                {submitStatus === "success" && (
+                  <Alert className="border-emerald-400/50 bg-emerald-500/15 text-emerald-100">
+                    <CheckCircle2 className="text-emerald-300" />
+                    <AlertTitle>Message sent</AlertTitle>
+                    <AlertDescription className="text-emerald-100/85">
+                      Thanks for reaching out. I will get back to you soon.
+                    </AlertDescription>
+                  </Alert>
+                )}
+
+                {submitStatus === "error" && (
+                  <Alert
+                    variant="destructive"
+                    className="border-red-400/50 bg-red-500/15 text-red-100"
+                  >
+                    <AlertCircle className="text-red-300" />
+                    <AlertTitle>Message failed</AlertTitle>
+                    <AlertDescription className="text-red-100/85">
+                      {errorMessage}
+                    </AlertDescription>
+                  </Alert>
+                )}
               </form>
             </div>
           </motion.div>
