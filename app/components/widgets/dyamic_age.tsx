@@ -12,7 +12,7 @@ export function dynamicAge(dob: Date, digits: number): number {
 }
 
 export default function DyanmicAge() {
-  const age = dynamicAge(new Date("2005-05-13T00:00:00Z"), 8);
+  const age = dynamicAge(new Date("2005-05-13T00:00:00Z"), 0);
 
   return <span>{age}</span>;
 }

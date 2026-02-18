@@ -16,7 +16,7 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "InboxGhost",
+    title: "Inbox Ghost",
     subtitle: "AI Gmail assistant",
     description:
       "Triages inboxes, summarizes threads, and drafts replies using Gmail OAuth, vector search, and LLMs.",
@@ -139,6 +139,7 @@ function ProjectRow({ p, flip }: { p: Project; flip?: boolean }) {
                 <a
                   key={l.type}
                   href={l.href}
+                  target="_blank"
                   className="
                     inline-flex items-center gap-2
                     rounded-full border border-white/10 bg-white/5

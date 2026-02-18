@@ -52,7 +52,7 @@ export default function Hero() {
     drop-shadow-[0_0_16px_rgba(168,85,247,0.4)]
   "
           >
-            20 Year Old Software Developer.
+            <DyanmicAge/> Year Old Software Developer.
           </p>
 
           <p
@@ -118,10 +118,11 @@ export default function Hero() {
             "
           >
             <Image
-              src="/headshot_cleanup.webp"
+              src="/headshot_cleanup_min.webp"
               alt="Gage Willette"
               fill
               className="object-cover"
+              sizes="(max-width: 768px) 320px, (max-width: 1024px) 360px, (max-width: 1280px) 420px, 480px"
               priority
             />
           </div>
