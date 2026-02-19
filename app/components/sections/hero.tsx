@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import DyanmicAge from "../widgets/dyamic_age";
+import { smoothScrollTo } from "@/lib/smooth-scroll";
 
 export default function Hero() {
   return (
@@ -85,12 +86,7 @@ export default function Hero() {
                 href="#work"
                 onClick={(e) => {
                   e.preventDefault();
-                  const el = document.querySelector("#work");
-                  if (!el) return;
-                  el.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
+                  smoothScrollTo("#work");
                 }}
               >
                 View Work
