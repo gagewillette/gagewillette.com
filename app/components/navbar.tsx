@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
+import { smoothScrollTo } from "@/lib/smooth-scroll";
 
 type Item = { label: string; href: string; id: string };
 
@@ -89,13 +90,8 @@ useEffect(() => {
                 onMouseEnter={() => setHovered(it.id)}
                 onClick={(e) => {
                   e.preventDefault();
-                  const el = document.querySelector(it.href);
-                  setActive(it.id)
-                  if (!el) return;
-                  el.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
+                  setActive(it.id);
+                  smoothScrollTo(it.href);
                 }}
                 className="
                   relative block select-none

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import DyanmicAge from "../widgets/dyamic_age";
+import { smoothScrollTo } from "@/lib/smooth-scroll";
 
 export default function Hero() {
   return (
@@ -35,34 +36,34 @@ export default function Hero() {
         >
           <h1
             className="
-    font-semibold tracking-tight text-white
-    text-4xl sm:text-5xl lg:text-6xl xl:text-7xl
-  "
+            font-semibold tracking-tight text-white
+            text-4xl sm:text-5xl lg:text-6xl xl:text-7xl
+          "
           >
             Hi, I’m Gage
           </h1>
 
           <p
             className="
-    mt-4
-    font-semibold
-    text-xl sm:text-2xl lg:text-3xl
-    bg-gradient-to-r from-purple-400 via-indigo-400 to-cyan-400
-    bg-clip-text text-transparent
-    drop-shadow-[0_0_16px_rgba(168,85,247,0.4)]
-  "
+            mt-4
+            font-semibold
+            text-xl sm:text-2xl lg:text-3xl
+            bg-gradient-to-r from-purple-400 via-indigo-400 to-cyan-400
+            bg-clip-text text-transparent
+            drop-shadow-[0_0_16px_rgba(168,85,247,0.4)]
+          "
           >
             <DyanmicAge/> Year Old Software Developer.
           </p>
 
           <p
             className="
-    mt-6
-    mx-auto sm:mx-0
-    max-w-lg
-    text-white/70 leading-relaxed
-    text-base sm:text-lg lg:text-xl
-  "
+            mt-6
+            mx-auto sm:mx-0
+            max-w-lg
+            text-white/70 leading-relaxed
+            text-base sm:text-lg lg:text-xl
+          "
           >
             Computer Science student at FSU building SaaS tools, AI-powered
             workflows, and scalable full-stack applications.
@@ -76,7 +77,7 @@ export default function Hero() {
               justify-center sm:justify-start
             "
           >
-            <Button className="rounded-full w-full sm:w-auto">Contact</Button>
+            <Button className="rounded-full w-full sm:w-auto" onClick={() => {smoothScrollTo("#contact")}}>Contact</Button>
             <Button
               variant="secondary"
               className="rounded-full bg-white/10 text-white hover:bg-white/15 w-full sm:w-auto"
@@ -85,12 +86,7 @@ export default function Hero() {
                 href="#work"
                 onClick={(e) => {
                   e.preventDefault();
-                  const el = document.querySelector("#work");
-                  if (!el) return;
-                  el.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
+                  smoothScrollTo("#work");
                 }}
               >
                 View Work
