@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gage Willette Portfolio
 
-## Getting Started
+Personal portfolio website for Gage Willette, built with Next.js (App Router) and deployed on Vercel.
 
-First, run the development server:
+## Overview
+
+This site showcases:
+
+- Hero intro and quick navigation
+- About section with animated tech stack visualization
+- Recent work/project highlights
+- Contact section with EmailJS-powered contact form
+
+## Tech Stack
+
+- Next.js 16 + React 19 + TypeScript
+- Tailwind CSS 4
+- Framer Motion (UI animation)
+- Lenis (smooth scrolling)
+- EmailJS (contact form delivery)
+- Vercel Analytics
+
+## Local Development
+
+Install dependencies and run the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` - Start local development server
+- `npm run build` - Build for production
+- `npm run start` - Run production build locally
+- `npm run lint` - Run ESLint
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `app/page.tsx` - Landing page composition
+- `app/components/sections/*` - Hero, About, Work, Contact sections
+- `app/components/navbar.tsx` - Floating nav with active section state
+- `app/components/lenis_provider.tsx` - Global smooth scroll setup
+- `lib/smooth-scroll.ts` - Shared scroll helper
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment and CI/CD
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is deployed on Vercel with Git-based CI/CD:
 
-## Deploy on Vercel
+- Pushes/PRs trigger automatic Vercel builds
+- Preview deployments are created for pull requests
+- Production deploys update when changes are merged to the production branch
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact Form Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The contact form currently sends mail through EmailJS in `app/components/sections/contact.tsx`. If you fork/reuse this repo, update the EmailJS service/template/public key values to your own.
