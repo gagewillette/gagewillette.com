@@ -4,11 +4,13 @@ import Hero from "./components/sections/hero";
 import About from "./components/sections/about";
 import Work from "./components/sections/recent_work";
 import Contact from "./components/sections/contact";
+import WelcomeModal from "./components/welcome_modal";
 
 export default function Home() {
   return (
     <main className="min-h-scren bg-background text-foreground">
       <Background />
+      <WelcomeModal />
       <Navbar />
       <Hero />
       <About />
