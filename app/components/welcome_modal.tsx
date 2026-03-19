@@ -44,9 +44,8 @@ export default function WelcomeModal() {
         welcomeModalConfig.storageKey,
       );
       const lastOpenedAt = Number(lastOpenedRaw);
-      //const hasRecentVisit = Number.isFinite(lastOpenedAt) && now - lastOpenedAt < cooldownMs;
+      const hasRecentVisit = Number.isFinite(lastOpenedAt) && now - lastOpenedAt < cooldownMs;
 
-      const hasRecentVisit = false;
 
       if (!hasRecentVisit) {
         window.localStorage.setItem(welcomeModalConfig.storageKey, String(now));
