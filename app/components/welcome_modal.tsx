@@ -24,7 +24,7 @@ const CONFETTI_PIECES = Array.from({ length: 50 }, (_, index) => ({
   rotate: -240 + index * 18,
   duration: 1.2 + (index % 5) * 0.12,
   delay: (index % 6) * 0.04,
-})) as const;
+}));
 
 const cooldownMs = welcomeModalConfig.cooldownDays * 24 * 60 * 60 * 1000;
 
