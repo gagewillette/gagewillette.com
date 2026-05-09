@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import BloomBackground from "../widgets/bloom_background";
 import { Github, ExternalLink } from "lucide-react";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 type Project = {
   title: string;
@@ -20,7 +20,7 @@ const projects: Project[] = [
     subtitle: "AI Gmail assistant",
     description:
       "Triages inboxes, summarizes threads, and drafts replies using Gmail OAuth, vector search, and LLMs.",
-    image: "/inboxghost.jpg",
+    image: "/ghost.gif",
     links: [
       { type: "github", href: "https://github.com/gagewillette/InboxGhost" },
     ],
@@ -34,6 +34,31 @@ const projects: Project[] = [
     links: [{ type: "github", href: "https://github.com/gagewillette/Indium" }],
   },
 ];
+
+function ViewportGif({ src, alt }: { src: string; alt: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={containerRef} className="h-[240px] w-full sm:h-[320px] lg:h-[360px]">
+      {inView && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
+      )}
+    </div>
+  );
+}
 
 function ProjectRow({ p, flip }: { p: Project; flip?: boolean }) {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -78,14 +103,18 @@ function ProjectRow({ p, flip }: { p: Project; flip?: boolean }) {
               transition={{ duration: 0.45, ease: "easeOut" }}
               className="relative"
             >
-              <Image
-                src={p.image}
-                alt={p.title}
-                width={1400}
-                height={900}
-                className="h-[240px] w-full object-cover sm:h-[320px] lg:h-[360px]"
-                priority={false}
-              />
+              {p.image.endsWith(".gif") ? (
+                <ViewportGif src={p.image} alt={p.title} />
+              ) : (
+                <Image
+                  src={p.image}
+                  alt={p.title}
+                  width={1400}
+                  height={900}
+                  className="h-[240px] w-full object-cover sm:h-[320px] lg:h-[360px]"
+                  priority={false}
+                />
+              )}
             </motion.div>
 
             <div className="pointer-events-none absolute inset-0 ring-1 ring-white/10" />
