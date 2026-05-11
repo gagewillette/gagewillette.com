@@ -13,7 +13,7 @@ export default function LenisProvider() {
       duration: 1.1,
     });
 
-    window.lenis = lenis;
+    window.__lenis = lenis;
 
     let rafId = 0;
 
@@ -27,7 +27,7 @@ export default function LenisProvider() {
     return () => {
       window.cancelAnimationFrame(rafId);
       lenis.destroy();
-      delete window.lenis;
+      delete window.__lenis;
     };
   }, []);
 

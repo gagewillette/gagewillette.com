@@ -4,7 +4,7 @@ type ScrollTarget = string | Element;
 
 declare global {
   interface Window {
-    lenis?: Lenis;
+    __lenis?: Lenis;
   }
 }
 
@@ -16,8 +16,8 @@ export function smoothScrollTo(target: ScrollTarget, offset = -8) {
 
   if (!element) return;
 
-  if (window.lenis) {
-    window.lenis.scrollTo(element, { offset });
+  if (window.__lenis) {
+    window.__lenis.scrollTo(element, { offset });
     return;
   }
 
