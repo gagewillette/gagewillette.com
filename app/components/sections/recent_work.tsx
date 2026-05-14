@@ -29,7 +29,7 @@ const projects: Project[] = [
     title: "Indium",
     subtitle: "Business management software",
     description:
-      "Full-stack dashboard for operations, automation, and analytics — built to actually ship and scale.",
+      "Full-stack dashboard tailored to Amazon FBA companies. Assists in operations, automation, and analytics.",
     image: "/indium.png",
     links: [{ type: "github", href: "https://github.com/gagewillette/Indium" }],
   },
