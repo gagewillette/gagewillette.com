@@ -120,6 +120,8 @@ export default function Hero() {
               className="object-cover"
               sizes="(max-width: 768px) 320px, (max-width: 1024px) 360px, (max-width: 1280px) 420px, 480px"
               priority
+              draggable={false}
+              onContextMenu={(e) => e.preventDefault()}
             />
           </div>
 

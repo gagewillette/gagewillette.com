@@ -19,7 +19,7 @@ const projects: Project[] = [
     title: "Inbox Ghost",
     subtitle: "AI Gmail assistant",
     description:
-      "Triages inboxes, summarizes threads, and drafts replies using Gmail OAuth, vector search, and LLMs.",
+      "Triages inboxes, summarizes threads, and drafts replies using Gmail OAuth, vector search, and LLMs with RAG.",
     image: "/ghost.gif",
     links: [
       { type: "github", href: "https://github.com/gagewillette/InboxGhost" },
@@ -29,7 +29,7 @@ const projects: Project[] = [
     title: "Indium",
     subtitle: "Business management software",
     description:
-      "Full-stack dashboard for operations, automation, and analytics — built to actually ship and scale.",
+      "Full-stack dashboard tailored to Amazon FBA companies. Assists in operations, automation, and analytics.",
     image: "/indium.png",
     links: [{ type: "github", href: "https://github.com/gagewillette/Indium" }],
   },
@@ -54,7 +54,7 @@ function ViewportGif({ src, alt }: { src: string; alt: string }) {
     <div ref={containerRef} className="h-[240px] w-full sm:h-[320px] lg:h-[360px]">
       {inView && (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
+        <img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" draggable={false} onContextMenu={(e) => e.preventDefault()} />
       )}
     </div>
   );
@@ -113,6 +113,8 @@ function ProjectRow({ p, flip }: { p: Project; flip?: boolean }) {
                   height={900}
                   className="h-[240px] w-full object-cover sm:h-[320px] lg:h-[360px]"
                   priority={false}
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
                 />
               )}
             </motion.div>

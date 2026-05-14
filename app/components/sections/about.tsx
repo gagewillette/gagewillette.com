@@ -226,10 +226,10 @@ export default function About() {
           className="text-center sm:text-left text-white/70 text-base sm:text-lg leading-relaxed"
         >
           <p>
-            I build full-stack products end-to-end — UI, backend, databases, and
-            deployment. I like shipping real systems that people can actually
-            use, and I’m always chasing clean UX with strong engineering
-            underneath.
+            I build full-stack products end-to-end. UI, backend, databases, and
+            deployment. I ship real systems that people can actually
+            use, and I’m always chasing clean UX with stronger engineering 
+            than preceeding projects..
           </p>
 
           <p className="mt-5 text-white/60">
