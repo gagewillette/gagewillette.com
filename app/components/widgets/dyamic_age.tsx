@@ -1,6 +1,3 @@
-// TODO: rexplore this concept
-
-
 export function dynamicAge(dob: Date, digits: number): number {
   const now = Date.now();
   const diffMs = now - dob.getTime();
@@ -11,6 +8,7 @@ export function dynamicAge(dob: Date, digits: number): number {
   return Math.trunc(years * factor) / factor;
 }
 
+// Compute age in years for "N Year Old Software Developer" text
 export default function DyanmicAge() {
   const age = dynamicAge(new Date("2005-05-13T00:00:00Z"), 0);
 
