@@ -54,7 +54,7 @@ function ViewportGif({ src, alt }: { src: string; alt: string }) {
     <div ref={containerRef} className="h-[240px] w-full sm:h-[320px] lg:h-[360px]">
       {inView && (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
+        <img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" draggable={false} onContextMenu={(e) => e.preventDefault()} />
       )}
     </div>
   );
@@ -113,6 +113,8 @@ function ProjectRow({ p, flip }: { p: Project; flip?: boolean }) {
                   height={900}
                   className="h-[240px] w-full object-cover sm:h-[320px] lg:h-[360px]"
                   priority={false}
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
                 />
               )}
             </motion.div>
