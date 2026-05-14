@@ -19,7 +19,7 @@ const projects: Project[] = [
     title: "Inbox Ghost",
     subtitle: "AI Gmail assistant",
     description:
-      "Triages inboxes, summarizes threads, and drafts replies using Gmail OAuth, vector search, and LLMs.",
+      "Triages inboxes, summarizes threads, and drafts replies using Gmail OAuth, vector search, and LLMs with RAG.",
     image: "/ghost.gif",
     links: [
       { type: "github", href: "https://github.com/gagewillette/InboxGhost" },
