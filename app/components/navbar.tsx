@@ -11,6 +11,7 @@ export default function Navbar() {
     () => [
       { label: "HOME", href: "#home", id: "home" },
       { label: "ABOUT", href: "#about", id: "about" },
+      { label: "EXPERIENCE", href: "#experience", id: "experience" },
       { label: "WORK", href: "#work", id: "work" },
       { label: "CONTACT", href: "#contact", id: "contact" },
     ],

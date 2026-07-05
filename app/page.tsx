@@ -2,6 +2,7 @@ import Background from "./components/background";
 import Navbar from "./components/navbar";
 import Hero from "./components/sections/hero";
 import About from "./components/sections/about";
+import Experience from "./components/sections/experience";
 import Work from "./components/sections/recent_work";
 import Contact from "./components/sections/contact";
 import WelcomeModal from "./components/welcome_modal";
@@ -14,6 +15,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <Experience />
       <Work />
       <Contact />
     </main>
