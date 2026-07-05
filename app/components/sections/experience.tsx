@@ -21,10 +21,10 @@ const roles: Role[] = [
     location: "Bentonville, AR",
     current: true,
     description:
-      "Building production software inside one of the largest engineering organizations in the world — where features ship to hundreds of millions of customers and small changes move real numbers.",
+      "Building production software inside one of the largest engineering organizations in the world. Primarily focused on translating project experience to real-world, scalable system deployments.",
     highlights: [
-      "Contributing full-stack to systems that operate at enterprise scale",
-      "Collaborating with senior engineers through code review, design docs, and agile delivery",
+      "Contributed to React frontends and Java backends in a microservice architecture.",
+      "Collaborating with senior engineers through code review, design docs, and CI/CD workflows.",
       "Writing, testing, and shipping code into a production codebase used by millions",
     ],
   },
