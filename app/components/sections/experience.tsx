@@ -17,15 +17,14 @@ const roles: Role[] = [
   {
     company: "Walmart Global Tech",
     title: "Software Engineering Intern",
-    period: "Summer 2026",
+    period: "May – August 2026",
     location: "Bentonville, AR",
-    current: true,
     description:
-      "Building production software inside one of the largest engineering organizations in the world. Primarily focused on translating project experience to real-world, scalable system deployments.",
+      "Spent the summer inside one of the largest engineering organizations in the world, taking a system from early data exploration all the way to a production deployment that runs in the Walmart ecosystem today.",
     highlights: [
-      "Contributed to React frontends and Java backends in a microservice architecture.",
-      "Collaborating with senior engineers through code review, design docs, and CI/CD workflows.",
-      "Writing, testing, and shipping code into a production codebase used by millions",
+      "Built an ML and rule-engine system that generates staffing requisition recommendations for store hiring managers, running over extremely large datasets in BigQuery to reduce the cost of hourly associate turnover — a single replacement can run up to $10K.",
+      "Used Code Puppy, Walmart's internal AI tooling, to dramatically accelerate my ramp-up and day-to-day workflow, experimenting with multi-model prompting and fanning out specialized agents to tackle large tasks in parallel.",
+      "Worked with principal engineers, senior directors, and project managers through design and review to push the project into production, where it's now in use across the Walmart ecosystem.",
     ],
   },
 ];

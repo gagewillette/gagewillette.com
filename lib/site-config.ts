@@ -11,6 +11,6 @@ export const welcomeModalConfig = { // content for the internship modal
   storageKey: "dev-portfolio:last-welcome-modal-opened-at",
   title: "Exciting News!",
   body:
-    "I’m excited to share that I’ll be joining Walmart Global Tech as a Software Engineering Intern for Summer 2026. I’m looking forward to working on impactful technology at scale and continuing to grow as a developer.",
+    "I just wrapped up my Summer 2026 Software Engineering Internship at Walmart Global Tech, where I shipped an ML-driven system into production. Check out the experience section for more on what I built.",
   dismissLabel: "Dismiss",
 } as const;
