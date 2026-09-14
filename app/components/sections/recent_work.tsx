@@ -16,6 +16,14 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "Diomedes",
+    subtitle: "Agent-maintained team wiki",
+    description:
+      "Team wiki that coding agents write over MCP and people verify. Real-time collaborative editor with version history, semantic search, and a review queue.",
+    image: "/diomedes.gif",
+    links: [{ type: "live", href: "https://diomedes.app" }],
+  },
+  {
     title: "Inbox Ghost",
     subtitle: "AI Gmail assistant",
     description:
@@ -24,14 +32,6 @@ const projects: Project[] = [
     links: [
       { type: "github", href: "https://github.com/gagewillette/InboxGhost" },
     ],
-  },
-  {
-    title: "Indium",
-    subtitle: "Business management software",
-    description:
-      "Full-stack dashboard tailored to Amazon FBA companies. Assists in operations, automation, and analytics.",
-    image: "/indium.png",
-    links: [{ type: "github", href: "https://github.com/gagewillette/Indium" }],
   },
 ];
 
