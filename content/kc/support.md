@@ -31,4 +31,4 @@ contains a link that opens KeeperCam so you can choose a new one.
 
 ## Contact
 
-Email: gagew0513@gmail.com
+Email: keepercam@gagewillette.com

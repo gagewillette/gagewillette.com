@@ -75,4 +75,4 @@ changes, tell you inside the app.
 
 ## Contact
 
-Questions about privacy: gagew0513@gmail.com
+Questions about privacy: keepercam@gagewillette.com
